@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Yejun Yeo — Portfolio</title>
+	<meta name="description" content="Yejun Yeo — Computer Science student at the University of Waterloo, machine learning engineer.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--bg: #ffffff;
+			--fg: #222222;
+			--muted: #777777;
+			--line: #e6e6e6;
+			--tag-bg: #f3f3f3;
+			--accent: #222222;
+		}
+		@media (prefers-color-scheme: dark) {
+			:root {
+				--bg: #111111;
+				--fg: #e8e8e8;
+				--muted: #9a9a9a;
+				--line: #2a2a2a;
+				--tag-bg: #1e1e1e;
+				--accent: #e8e8e8;
+			}
+		}
+
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+
+		body {
+			background: var(--bg);
+			color: var(--fg);
+			font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.7;
+			max-width: 720px;
+			margin: 0 auto;
+			padding: 72px 20px 96px;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+		a:hover { opacity: 0.7; }
+
+		h1, h2, h3, .mono { font-family: "JetBrains Mono", monospace; }
+
+		/* Header */
+		header { margin-bottom: 56px; }
+		h1 { font-size: 30px; font-weight: 700; line-height: 1.2; margin-bottom: 8px; }
+		.tagline { font-size: 16px; color: var(--muted); margin-bottom: 20px; }
+		.links { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 14px; }
+		.links a { font-family: "JetBrains Mono", monospace; }
+
+		/* Sections */
+		section { margin-bottom: 56px; }
+		h2 {
+			font-size: 13px;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.12em;
+			color: var(--muted);
+			padding-bottom: 10px;
+			border-bottom: 1px solid var(--line);
+			margin-bottom: 24px;
+		}
+
+		.entry { margin-bottom: 32px; }
+		.entry:last-child { margin-bottom: 0; }
+		.entry-head {
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
+			gap: 16px;
+			flex-wrap: wrap;
+		}
+		h3 { font-size: 17px; font-weight: 700; line-height: 1.3; }
+		.meta { font-size: 14px; color: var(--muted); font-family: "JetBrains Mono", monospace; white-space: nowrap; }
+		.sub { font-size: 15px; color: var(--muted); margin-top: 2px; margin-bottom: 10px; }
+
+		ul { list-style: none; }
+		ul li { position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 15px; }
+		ul li::before { content: "–"; position: absolute; left: 0; color: var(--muted); }
+
+		.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 12px; }
+		.tag {
+			font-family: "JetBrains Mono", monospace;
+			font-size: 12px;
+			background: var(--tag-bg);
+			padding: 2px 8px;
+			border-radius: 4px;
+			color: var(--fg);
+		}
+
+		/* Skills */
+		.skills { display: grid; grid-template-columns: 160px 1fr; gap: 12px 16px; font-size: 15px; }
+		.skills dt { font-family: "JetBrains Mono", monospace; font-size: 13px; color: var(--muted); padding-top: 2px; }
+		.skills dd { margin: 0; }
+
+		footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 20px; }
+
+		@media (max-width: 520px) {
+			body { padding-top: 48px; }
+			h1 { font-size: 26px; }
+			.skills { grid-template-columns: 1fr; gap: 4px; }
+			.skills dd { margin-bottom: 10px; }
+			.meta { white-space: normal; }
+		}
+	</style>
+</head>
+<body>
+
+	<header>
+		<h1>Yejun Yeo</h1>
+		<p class="tagline">Computer Science @ University of Waterloo · Machine learning engineer</p>
+		<nav class="links">
+			<a href="mailto:y2yeo@uwaterloo.ca">Email</a>
+			<a href="https://www.linkedin.com/in/yejun-yeo-40235932b" target="_blank" rel="noopener">LinkedIn</a>
+			<a href="/resume/resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+		</nav>
+	</header>
+
+	<section id="experience">
+		<h2>Experience</h2>
+
+		<div class="entry">
+			<div class="entry-head">
+				<h3>Machine Learning Engineer</h3>
+				<span class="meta">Jan 2026 – Aug 2026</span>
+			</div>
+			<p class="sub">City of Edmonton · Alberta, Canada</p>
+			<ul>
+				<li>Built a machine learning model predicting wildfires in Edmonton using R, chosen for its geospatial libraries, trained on weather and land data pulled from PostgreSQL.</li>
+				<li>Reduced the false alarm ratio from 40:1 to 13:1 (a 3× precision gain) and improved ROC-AUC from 0.60 to 0.83 by engineering 88+ geospatial features, implementing isotonic probability calibration, and tuning XGBoost for extreme class imbalance (0.33% positive rate).</li>
+				<li>Ported the R/Shiny wildfire prediction model to FastAPI + React/TypeScript, including hand-porting R fire prediction libraries to Python, achieving a 6× faster load time (2 min to 20 s).</li>
+				<li>Designed a production pipeline with Docker, GitLab CI/CD, and Google Cloud (GKE) under mentorship from senior architects, implementing features based on their reviews.</li>
+				<li>Collaborated with 3 senior engineers through Git feature branches and merge requests, iterating on the app based on bi-weekly stakeholder feedback.</li>
+			</ul>
+		</div>
+	</section>
+
+	<section id="projects">
+		<h2>Projects</h2>
+
+		<div class="entry">
+			<div class="entry-head">
+				<h3>Brain Tumor MRI Classifier</h3>
+			</div>
+			<div class="tags">
+				<span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">OpenCV</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span>
+			</div>
+			<ul>
+				<li>Built a CNN in PyTorch to classify brain tumour MRI scans from a Kaggle dataset into 4 categories.</li>
+				<li>Pre-processed images with OpenCV and NumPy by resizing, grayscaling, and normalizing to give the model consistent input.</li>
+				<li>Tuned the architecture with ReLU, max pooling, and softmax layers, and tracked accuracy and loss curves in Matplotlib to catch overfitting.</li>
+			</ul>
+		</div>
+
+		<div class="entry">
+			<div class="entry-head">
+				<h3><a href="/resume/prng-research-paper.pdf" target="_blank" rel="noopener">Machine Learning-Based PRNG Research Paper</a></h3>
+			</div>
+			<div class="tags">
+				<span class="tag">Python</span><span class="tag">Java</span><span class="tag">NumPy</span><span class="tag">Git</span>
+			</div>
+			<ul>
+				<li>Authored a 4,000-word research paper comparing the predictability of PRNGs (pseudorandom number generators) used in Python and Java.</li>
+				<li>Implemented linear regression with gradient descent in Python to evaluate error margins across 400 × 25 datasets of pseudo-random numbers.</li>
+				<li>Analysed results showing Python's PRNG (Mersenne Twister) is slightly more predictable than Java's LCG (linear congruential generator).</li>
+			</ul>
+		</div>
+	</section>
+
+	<section id="education">
+		<h2>Education</h2>
+
+		<div class="entry">
+			<div class="entry-head">
+				<h3>University of Waterloo</h3>
+				<span class="meta">Sep 2024 – May 2029</span>
+			</div>
+			<p class="sub">B.C.S. Computer Science Honours Co-op · Waterloo, Canada</p>
+			<ul>
+				<li><strong>Awards:</strong> President's Scholarship of Distinction; 2nd Place, 2025 Waterloo Tech Week Chess Bot Tournament.</li>
+				<li><strong>Certifications:</strong> Stanford Online Machine Learning; Google Data Analytics Professional Certificate.</li>
+			</ul>
+		</div>
+	</section>
+
+	<section id="skills">
+		<h2>Technical Skills</h2>
+		<dl class="skills">
+			<dt>Languages</dt>
+			<dd>Python, R, C/C++, Java, SQL (Postgres), JavaScript, TypeScript, HTML/CSS</dd>
+			<dt>Frameworks</dt>
+			<dd>React, Node.js, Flask, FastAPI, Streamlit</dd>
+			<dt>Developer Tools</dt>
+			<dd>Git, Docker, Kubernetes (GKE), Google Cloud Platform, VS Code, Vim</dd>
+			<dt>Libraries</dt>
+			<dd>NumPy, pandas, Matplotlib, PyTorch</dd>
+			<dt>Spoken</dt>
+			<dd>English (native), Korean (native), German, Slovak</dd>
+		</dl>
+	</section>
+
+	<footer>
+		<span class="mono">yejunyeo.com/portfolio</span>
+	</footer>
+
+</body>
+</html>
