@@ -49,10 +49,27 @@
 
 		/* Header */
 		header { margin-bottom: 56px; }
+		.identity {
+			display: flex;
+			align-items: center;
+			gap: 24px;
+			margin-bottom: 24px;
+		}
+		.photo {
+			width: 104px;
+			height: 104px;
+			border-radius: 50%;
+			object-fit: cover;
+			flex-shrink: 0;
+			border: 1px solid var(--line);
+		}
 		h1 { font-size: 30px; font-weight: 700; line-height: 1.2; margin-bottom: 8px; }
-		.tagline { font-size: 16px; color: var(--muted); margin-bottom: 20px; }
+		.tagline { font-size: 16px; color: var(--muted); margin-bottom: 14px; }
 		.links { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 14px; }
 		.links a { font-family: "JetBrains Mono", monospace; }
+		.intro { font-size: 16px; }
+		.intro p { margin-bottom: 10px; }
+		.intro p:last-child { margin-bottom: 0; }
 
 		/* Sections */
 		section { margin-bottom: 56px; }
@@ -104,6 +121,8 @@
 		@media (max-width: 520px) {
 			body { padding-top: 48px; }
 			h1 { font-size: 26px; }
+			.identity { flex-direction: column; align-items: flex-start; gap: 16px; }
+			.photo { width: 88px; height: 88px; }
 			.skills { grid-template-columns: 1fr; gap: 4px; }
 			.skills dd { margin-bottom: 10px; }
 			.meta { white-space: normal; }
@@ -113,13 +132,22 @@
 <body>
 
 	<header>
-		<h1>Yejun Yeo</h1>
-		<p class="tagline">Computer Science @ University of Waterloo · Machine learning engineer</p>
-		<nav class="links">
-			<a href="mailto:y2yeo@uwaterloo.ca">Email</a>
-			<a href="https://www.linkedin.com/in/yejun-yeo-40235932b" target="_blank" rel="noopener">LinkedIn</a>
-			<a href="/resume/resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
-		</nav>
+		<div class="identity">
+			<img class="photo" src="139298793.png" alt="Yejun Yeo" width="104" height="104">
+			<div>
+				<h1>Yejun Yeo</h1>
+				<p class="tagline">Computer Science @ University of Waterloo · Machine learning engineer</p>
+				<nav class="links">
+					<a href="mailto:y2yeo@uwaterloo.ca">Email</a>
+					<a href="https://www.linkedin.com/in/yejun-yeo-40235932b" target="_blank" rel="noopener">LinkedIn</a>
+					<a href="/resume/resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+				</nav>
+			</div>
+		</div>
+		<div class="intro">
+			<p>Hi 👋 My parents are Korean 🇰🇷, but I was born in Vienna 🇦🇹, raised in Slovakia 🇸🇰, and study in Canada 🇨🇦.</p>
+			<p>📚 I’m currently reading <em>The Unbearable Lightness of Being</em> by Milan Kundera and <em>Walden</em> by Henry David Thoreau.</p>
+		</div>
 	</header>
 
 	<section id="experience">
